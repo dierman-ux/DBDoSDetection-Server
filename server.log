@@ -1,0 +1,19 @@
+2025-06-05 09:32:56,907 - INFO - Starting server on 192.168.1.140:8080
+2025-06-05 09:33:16,256 - INFO - Interrupt signal received, shutting down server.
+2025-06-05 09:33:25,295 - INFO - Starting server on 192.168.1.140:8080
+2025-06-05 09:35:09,222 - INFO - GET - From: 192.168.1.140 - Path: /
+2025-06-05 09:35:45,797 - INFO - GET - From: 192.168.1.140 - Path: /
+2025-06-05 09:35:46,077 - INFO - GET - From: 192.168.1.140 - Path: /favicon.ico
+2025-06-05 09:43:40,240 - INFO - GET - From: 192.168.1.140 - Path: /
+2025-06-05 09:43:40,484 - INFO - GET - From: 192.168.1.140 - Path: /favicon.ico
+2025-06-05 09:43:42,166 - INFO - GET - From: 192.168.1.140 - Path: /
+2025-06-05 09:43:42,265 - INFO - GET - From: 192.168.1.140 - Path: /favicon.ico
+2025-06-05 09:43:43,376 - INFO - GET - From: 192.168.1.140 - Path: /
+2025-06-05 09:43:43,480 - INFO - GET - From: 192.168.1.140 - Path: /favicon.ico
+2025-06-05 09:43:44,522 - INFO - GET - From: 192.168.1.140 - Path: /
+2025-06-05 09:43:44,635 - INFO - GET - From: 192.168.1.140 - Path: /favicon.ico
+2025-06-05 09:43:46,540 - INFO - Interrupt signal received, shutting down server.
+2025-06-05 09:43:55,894 - INFO - Starting server on 192.168.1.140:8080
+2025-06-05 09:47:28,087 - INFO - Interrupt signal received, shutting down server.
+2025-06-05 09:48:04,260 - INFO - Starting server on 192.168.1.140:8080
+2025-06-05 09:50:58,362 - INFO - Interrupt signal received, shutting down server.
