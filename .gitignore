@@ -1,2 +1,35 @@
-server/knn_model.pkl
-"server/knn_model.pkl" 
+# 🔧 Python
+__pycache__/
+#*.py[cod]
+*.pkl
+*.log
+
+# 🔒 Entornos y secretos
+.env
+.venv/
+*.env
+
+# Paquetes y node_modules
+# node_modules/
+
+# Entrenamiento y modelos ML
+#models/
+*.joblib
+# *.sav
+
+# 🧪 VeChain scripts y artefactos
+#blacklist/*.ts
+blacklist/*.js
+blacklist/*.map
+blacklist/*.sol.json
+
+# 🖼️ Frontal si se genera desde build tools
+/frontend/dist/
+/frontend/node_modules/
+/frontend/*.map
+
+# 💥 Archivos de prueba / temporales
+*.bak
+*.tmp
+*.DS_Store
+*.swp
