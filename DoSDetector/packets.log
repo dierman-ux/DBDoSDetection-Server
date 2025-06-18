@@ -1,0 +1,370 @@
+2025-06-15 20:27:05,068 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.5166630744934082, 'Total Fwd Packets': 11, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1589.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 516.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 144.45454545454547, 'Fwd Packet Length Std': 161.33159733146096, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 1047.6947891216732, 'Flow Packets/s': 7.252764430672377, 'Fwd Packets/s': 7.252764430672377, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 516.0, 'Packet Length Mean': 144.45454545454547, 'Packet Length Std': 161.33159733146096, 'Packet Length Variance': 26027.884297520657, 'Flow IAT Mean': 0.15166630744934081, 'Flow IAT Std': 0.40093696448529875, 'Flow IAT Max': 1.3472249507904053, 'Flow IAT Min': 0.0, 'Fwd IAT Total': 1.5166630744934082, 'Fwd IAT Mean': 0.15166630744934081, 'Fwd IAT Std': 0.40093696448529875, 'Fwd IAT Max': 1.3472249507904053, 'Fwd IAT Min': 0.0, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 3, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:06,883 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.8174948692321777, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1541.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 154.1, 'Fwd Packet Length Std': 173.3230798249327, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 847.8703440032343, 'Flow Packets/s': 5.502078805991138, 'Fwd Packets/s': 5.502078805991138, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 154.1, 'Packet Length Std': 173.3230798249327, 'Packet Length Variance': 30040.889999999992, 'Flow IAT Mean': 0.20194387435913086, 'Flow IAT Std': 0.5454460325493917, 'Flow IAT Max': 1.7438437938690186, 'Flow IAT Min': 0.0, 'Fwd IAT Total': 1.8174948692321777, 'Fwd IAT Mean': 0.20194387435913086, 'Fwd IAT Std': 0.5454460325493917, 'Fwd IAT Max': 1.7438437938690186, 'Fwd IAT Min': 0.0, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 2, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:08,187 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.3113532066345215, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1541.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 154.1, 'Fwd Packet Length Std': 173.3230798249327, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 1175.1219977986311, 'Flow Packets/s': 7.625710563261721, 'Fwd Packets/s': 7.625710563261721, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 154.1, 'Packet Length Std': 173.3230798249327, 'Packet Length Variance': 30040.889999999992, 'Flow IAT Mean': 0.14570591184828016, 'Flow IAT Std': 0.37877213986884917, 'Flow IAT Max': 1.2153871059417725, 'Flow IAT Min': 0.0, 'Fwd IAT Total': 1.3113532066345215, 'Fwd IAT Mean': 0.14570591184828016, 'Fwd IAT Std': 0.37877213986884917, 'Fwd IAT Max': 1.2153871059417725, 'Fwd IAT Min': 0.0, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 2, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:09,371 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.1877977848052979, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1541.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 154.1, 'Fwd Packet Length Std': 173.3230798249327, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 1297.3588768332302, 'Flow Packets/s': 8.418941446030047, 'Fwd Packets/s': 8.418941446030047, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 154.1, 'Packet Length Std': 173.3230798249327, 'Packet Length Variance': 30040.889999999992, 'Flow IAT Mean': 0.1319775316450331, 'Flow IAT Std': 0.3098077255487756, 'Flow IAT Max': 0.9952027797698975, 'Flow IAT Min': 0.0, 'Fwd IAT Total': 1.1877977848052979, 'Fwd IAT Mean': 0.1319775316450331, 'Fwd IAT Std': 0.3098077255487756, 'Fwd IAT Max': 0.9952027797698975, 'Fwd IAT Min': 0.0, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 2, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:10,689 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.3174080848693848, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1541.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 154.1, 'Fwd Packet Length Std': 173.3230798249327, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 1169.7210740533624, 'Flow Packets/s': 7.590662388405986, 'Fwd Packets/s': 7.590662388405986, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 154.1, 'Packet Length Std': 173.3230798249327, 'Packet Length Variance': 30040.889999999992, 'Flow IAT Mean': 0.1463786760965983, 'Flow IAT Std': 0.3889852270173572, 'Flow IAT Max': 1.2456469535827637, 'Flow IAT Min': 0.0, 'Fwd IAT Total': 1.3174080848693848, 'Fwd IAT Mean': 0.1463786760965983, 'Fwd IAT Std': 0.3889852270173572, 'Fwd IAT Max': 1.2456469535827637, 'Fwd IAT Min': 0.0, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 2, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:11,771 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.0770471096038818, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1541.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 154.1, 'Fwd Packet Length Std': 173.3230798249327, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 1430.7637857797617, 'Flow Packets/s': 9.284644943411822, 'Fwd Packets/s': 9.284644943411822, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 154.1, 'Packet Length Std': 173.3230798249327, 'Packet Length Variance': 30040.889999999992, 'Flow IAT Mean': 0.11967190106709798, 'Flow IAT Std': 0.3113397190046884, 'Flow IAT Max': 0.9986040592193604, 'Flow IAT Min': 0.0002429485321044922, 'Fwd IAT Total': 1.0770471096038818, 'Fwd IAT Mean': 0.11967190106709798, 'Fwd IAT Std': 0.3113397190046884, 'Fwd IAT Max': 0.9986040592193604, 'Fwd IAT Min': 0.0002429485321044922, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 2, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:13,471 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.7047171592712402, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1541.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 154.1, 'Fwd Packet Length Std': 173.3230798249327, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 903.9622741046212, 'Flow Packets/s': 5.866075756681513, 'Fwd Packets/s': 5.866075756681513, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 154.1, 'Packet Length Std': 173.3230798249327, 'Packet Length Variance': 30040.889999999992, 'Flow IAT Mean': 0.18941301769680446, 'Flow IAT Std': 0.5077686108320028, 'Flow IAT Max': 1.6248571872711182, 'Flow IAT Min': 0.0, 'Fwd IAT Total': 1.7047171592712402, 'Fwd IAT Mean': 0.18941301769680446, 'Fwd IAT Std': 0.5077686108320028, 'Fwd IAT Max': 1.6248571872711182, 'Fwd IAT Min': 0.0, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 2, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:15,016 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.5417628288269043, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1541.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 154.1, 'Fwd Packet Length Std': 173.3230798249327, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 999.5052229742205, 'Flow Packets/s': 6.486081914174046, 'Fwd Packets/s': 6.486081914174046, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 154.1, 'Packet Length Std': 173.3230798249327, 'Packet Length Variance': 30040.889999999992, 'Flow IAT Mean': 0.17130698098076713, 'Flow IAT Std': 0.45889803107148064, 'Flow IAT Max': 1.4684829711914062, 'Flow IAT Min': 0.0, 'Fwd IAT Total': 1.5417628288269043, 'Fwd IAT Mean': 0.17130698098076713, 'Fwd IAT Std': 0.45889803107148064, 'Fwd IAT Max': 1.4684829711914062, 'Fwd IAT Min': 0.0, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 2, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:16,755 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.7274951934814453, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1541.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 154.1, 'Fwd Packet Length Std': 173.3230798249327, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 892.0430029645414, 'Flow Packets/s': 5.788728117875025, 'Fwd Packets/s': 5.788728117875025, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 154.1, 'Packet Length Std': 173.3230798249327, 'Packet Length Variance': 30040.889999999992, 'Flow IAT Mean': 0.19194391038682726, 'Flow IAT Std': 0.5172958303948766, 'Flow IAT Max': 1.6547281742095947, 'Flow IAT Min': 0.00020599365234375, 'Fwd IAT Total': 1.7274951934814453, 'Fwd IAT Mean': 0.19194391038682726, 'Fwd IAT Std': 0.5172958303948766, 'Fwd IAT Max': 1.6547281742095947, 'Fwd IAT Min': 0.00020599365234375, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 2, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-15 20:27:18,599 - INFO - [192.168.1.131] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.8384921550750732, 'Total Fwd Packets': 10, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 1603.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 542.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 160.3, 'Fwd Packet Length Std': 171.44564736382196, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 871.9101659340738, 'Flow Packets/s': 5.439239962158913, 'Fwd Packets/s': 5.439239962158913, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 542.0, 'Packet Length Mean': 160.3, 'Packet Length Std': 171.44564736382196, 'Packet Length Variance': 29393.609999999997, 'Flow IAT Mean': 0.2042769061194526, 'Flow IAT Std': 0.5486347604773065, 'Flow IAT Max': 1.7552101612091064, 'Flow IAT Min': 0.0009379386901855469, 'Fwd IAT Total': 1.8384921550750732, 'Fwd IAT Mean': 0.2042769061194526, 'Fwd IAT Std': 0.5486347604773065, 'Fwd IAT Max': 1.7552101612091064, 'Fwd IAT Min': 0.0009379386901855469, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 2, 'SYN Flag Count': 1, 'RST Flag Count': 0, 'PSH Flag Count': 2, 'ACK Flag Count': 8, 'Fwd PSH Flags': 2, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 09:33:42,451 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.015207052230835, 'Total Fwd Packets': 556, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 54956.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 98.84172661870504, 'Fwd Packet Length Std': 62.233461469816945, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 54132.7996877471, 'Flow Packets/s': 547.6715304313885, 'Fwd Packets/s': 547.6715304313885, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 98.84172661870504, 'Packet Length Std': 62.233461469816945, 'Packet Length Variance': 3873.0037265151905, 'Flow IAT Mean': 0.0018292018959114144, 'Flow IAT Std': 0.013639788106267302, 'Flow IAT Max': 0.1675279140472412, 'Flow IAT Min': 3.814697265625e-06, 'Fwd IAT Total': 1.015207052230835, 'Fwd IAT Mean': 0.0018292018959114144, 'Fwd IAT Std': 0.013639788106267302, 'Fwd IAT Max': 0.1675279140472412, 'Fwd IAT Min': 3.814697265625e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 110, 'SYN Flag Count': 110, 'RST Flag Count': 0, 'PSH Flag Count': 110, 'ACK Flag Count': 446, 'Fwd PSH Flags': 110, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 09:33:43,991 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.0005428791046143, 'Total Fwd Packets': 1034, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 102432.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 99.06382978723404, 'Fwd Packet Length Std': 62.39356730496122, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 102376.42197970205, 'Flow Packets/s': 1033.4389675786074, 'Fwd Packets/s': 1033.4389675786074, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 99.06382978723404, 'Packet Length Std': 62.39356730496122, 'Packet Length Variance': 3892.957241038726, 'Flow IAT Mean': 0.0009685797474391232, 'Flow IAT Std': 0.0075079227145180664, 'Flow IAT Max': 0.17950916290283203, 'Flow IAT Min': 2.86102294921875e-06, 'Fwd IAT Total': 1.0005428791046143, 'Fwd IAT Mean': 0.0009685797474391232, 'Fwd IAT Std': 0.0075079227145180664, 'Fwd IAT Max': 0.17950916290283203, 'Fwd IAT Min': 2.86102294921875e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 203, 'SYN Flag Count': 205, 'RST Flag Count': 0, 'PSH Flag Count': 206, 'ACK Flag Count': 829, 'Fwd PSH Flags': 206, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 09:33:45,737 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.0003199577331543, 'Total Fwd Packets': 1356, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 134332.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 99.06489675516224, 'Fwd Packet Length Std': 62.37193539793619, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 134289.03318535452, 'Flow Packets/s': 1355.5662760871628, 'Fwd Packets/s': 1355.5662760871628, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 99.06489675516224, 'Packet Length Std': 62.37193539793619, 'Packet Length Variance': 3890.2583252843256, 'Flow IAT Mean': 0.0007382435112421803, 'Flow IAT Std': 0.001198181689767226, 'Flow IAT Max': 0.011353015899658203, 'Flow IAT Min': 2.1457672119140625e-06, 'Fwd IAT Total': 1.0003199577331543, 'Fwd IAT Mean': 0.0007382435112421803, 'Fwd IAT Std': 0.001198181689767226, 'Fwd IAT Max': 0.011353015899658203, 'Fwd IAT Min': 2.1457672119140625e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 271, 'SYN Flag Count': 272, 'RST Flag Count': 0, 'PSH Flag Count': 270, 'ACK Flag Count': 1084, 'Fwd PSH Flags': 270, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 09:33:45,753 - WARNING - 192.168.1.149 reached max warnings (3). Adding to blacklist.
+2025-06-16 09:33:45,754 - INFO - Logging attack for 192.168.1.149: DoS Hulk
+2025-06-16 09:33:49,752 - INFO - Attack logged successfully for 192.168.1.149. Tx Id: Estimated gas result: { totalGas: 137253, reverted: false, revertReasons: [], vmErrors: [] }
+Building transaction body...
+Transaction body: {
+  blockRef: '0x014fb9ee1274a1f7',
+  chainTag: 39,
+  clauses: [
+    {
+      to: '0x3503543A2dAD949457deC8CEBf09F9d28Ec42416',
+      value: '0',
+      data: '0x7ce6038900000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000d3139322e3136382e312e313439000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008446f532048756c6b000000000000000000000000000000000000000000000000'
+    }
+  ],
+  dependsOn: null,
+  expiration: 32,
+  gas: 137253,
+  gasPriceCoef: undefined,
+  maxFeePerGas: '0x09184e72a000',
+  maxPriorityFeePerGas: '0x00',
+  nonce: '0x9d0cb50129302fcc',
+  reserved: undefined
+}
+Getting signer for address: 0xDfCdED32c7339247B1eb88852BFdB30310c3F6Ec
+Signer retrieved: n {
+  MESSAGE_PREFIX: Uint8Array(26) [
+     25,  69, 116, 104, 101, 114, 101,
+    117, 109,  32,  83, 105, 103, 110,
+    101, 100,  32,  77, 101, 115, 115,
+     97, 103, 101,  58,  10
+  ],
+  provider: $ {
+    _events: [Object: null prototype] {},
+    _eventsCount: 0,
+    _maxListeners: undefined,
+    subscriptionManager: { logSubscriptions: Map(0) {}, currentBlockNumber: 0 },
+    pollInstance: undefined,
+    thorClient: n {
+      accounts: [K],
+      nodes: [ne],
+      blocks: [z],
+      logs: [te],
+      transactions: [re],
+      contracts: [X],
+      forkDetector: [H],
+      gas: [ee],
+      debug: [Z],
+      httpClient: [n]
+    },
+    wallet: ce { accounts: [Array], gasPayer: undefined },
+    enableDelegation: false,
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false
+  },
+  privateKey: Uint8Array(32) [
+     65, 141, 236, 102, 205, 146,   5,  92,
+    112,  15,  59,  72,  97, 197, 101,   4,
+    100, 189, 108, 214, 107, 145, 147, 125,
+      1,  85,  40, 179,  16,  85,  96,  48
+  ]
+}
+Signing transaction...
+Signed transaction: n {
+  body: {
+    blockRef: '0x014fb9ee1274a1f7',
+    chainTag: 39,
+    clauses: [ [Object] ],
+    dependsOn: null,
+    expiration: 32,
+    gas: 137253,
+    nonce: '0x9d0cb50129302fcc',
+    maxFeePerGas: 10000000000000,
+    maxPriorityFeePerGas: 0
+  },
+  transactionType: 'eip1559',
+  signature: Uint8Array(65) [
+    143, 196,  64, 145, 124,  86,  75,  58,   2,  15, 169,
+    195, 124,  53,  83,  32, 197,  48,  71, 247,  83, 217,
+    232, 138,  15,  81,  80,  24, 115,  87, 229, 187, 116,
+      0, 188,  97, 212, 202, 141, 137, 193,  69, 252,  61,
+    143,  53, 237,  93,  16, 222, 127,  67,  93, 203, 224,
+     85, 176,  25,  83, 179, 164,  33, 249,  86,   1
+  ]
+}
+Sending transaction...
+Transaction sent, ID: 0x1bea9348000204c0d76c2d50eaaa3324803c2b60fcd85f411650ee52cf6c5906
+Ataque registrado correctamente
+2025-06-16 09:44:28,110 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.000471830368042, 'Total Fwd Packets': 1231, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 121782.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 98.92932575142162, 'Fwd Packet Length Std': 62.26345881239002, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 121724.5666529164, 'Flow Packets/s': 1230.4194507377124, 'Fwd Packets/s': 1230.4194507377124, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 98.92932575142162, 'Packet Length Std': 62.26345881239002, 'Packet Length Variance': 3876.7383032821886, 'Flow IAT Mean': 0.0008133917320065382, 'Flow IAT Std': 0.0013733076945942932, 'Flow IAT Max': 0.013354063034057617, 'Flow IAT Min': 2.1457672119140625e-06, 'Fwd IAT Total': 1.000471830368042, 'Fwd IAT Mean': 0.0008133917320065382, 'Fwd IAT Std': 0.0013733076945942932, 'Fwd IAT Max': 0.013354063034057617, 'Fwd IAT Min': 2.1457672119140625e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 244, 'SYN Flag Count': 248, 'RST Flag Count': 0, 'PSH Flag Count': 244, 'ACK Flag Count': 983, 'Fwd PSH Flags': 244, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 09:44:30,336 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.0008440017700195, 'Total Fwd Packets': 1206, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 119736.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 99.28358208955224, 'Fwd Packet Length Std': 62.56351343266521, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 119635.02782475957, 'Flow Packets/s': 1204.9829922217214, 'Fwd Packets/s': 1204.9829922217214, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 99.28358208955224, 'Packet Length Std': 62.56351343266521, 'Packet Length Variance': 3914.19321303928, 'Flow IAT Mean': 0.0008305759350788544, 'Flow IAT Std': 0.0014094555767188634, 'Flow IAT Max': 0.015696048736572266, 'Flow IAT Min': 2.86102294921875e-06, 'Fwd IAT Total': 1.0008440017700195, 'Fwd IAT Mean': 0.0008305759350788544, 'Fwd IAT Std': 0.0014094555767188634, 'Fwd IAT Max': 0.015696048736572266, 'Fwd IAT Min': 2.86102294921875e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 237, 'SYN Flag Count': 238, 'RST Flag Count': 0, 'PSH Flag Count': 242, 'ACK Flag Count': 968, 'Fwd PSH Flags': 242, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 09:44:31,973 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.0002341270446777, 'Total Fwd Packets': 1432, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 142162.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 99.27513966480447, 'Fwd Packet Length Std': 62.52116733718235, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 142128.72382192776, 'Flow Packets/s': 1431.6648085494053, 'Fwd Packets/s': 1431.6648085494053, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 99.27513966480447, 'Packet Length Std': 62.52116733718235, 'Packet Length Variance': 3908.896365203957, 'Flow IAT Mean': 0.000698975630359663, 'Flow IAT Std': 0.0012374126051671872, 'Flow IAT Max': 0.01533198356628418, 'Flow IAT Min': 1.9073486328125e-06, 'Fwd IAT Total': 1.0002341270446777, 'Fwd IAT Mean': 0.000698975630359663, 'Fwd IAT Std': 0.0012374126051671872, 'Fwd IAT Max': 0.01533198356628418, 'Fwd IAT Min': 1.9073486328125e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 285, 'SYN Flag Count': 288, 'RST Flag Count': 0, 'PSH Flag Count': 287, 'ACK Flag Count': 1144, 'Fwd PSH Flags': 287, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 09:44:31,998 - WARNING - 192.168.1.149 reached max warnings (3). Adding to blacklist.
+2025-06-16 09:44:31,998 - INFO - Logging attack for 192.168.1.149: DoS Hulk
+2025-06-16 09:44:35,967 - INFO - Attack logged successfully for 192.168.1.149. Tx Id: Estimated gas result: { totalGas: 137253, reverted: false, revertReasons: [], vmErrors: [] }
+Building transaction body...
+Transaction body: {
+  blockRef: '0x014fba2fe933348b',
+  chainTag: 39,
+  clauses: [
+    {
+      to: '0x3503543A2dAD949457deC8CEBf09F9d28Ec42416',
+      value: '0',
+      data: '0x7ce6038900000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000d3139322e3136382e312e313439000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008446f532048756c6b000000000000000000000000000000000000000000000000'
+    }
+  ],
+  dependsOn: null,
+  expiration: 32,
+  gas: 137253,
+  gasPriceCoef: undefined,
+  maxFeePerGas: '0x09184e72a000',
+  maxPriorityFeePerGas: '0x00',
+  nonce: '0x3cdcef1aba1e591e',
+  reserved: undefined
+}
+Getting signer for address: 0xDfCdED32c7339247B1eb88852BFdB30310c3F6Ec
+Signer retrieved: n {
+  MESSAGE_PREFIX: Uint8Array(26) [
+     25,  69, 116, 104, 101, 114, 101,
+    117, 109,  32,  83, 105, 103, 110,
+    101, 100,  32,  77, 101, 115, 115,
+     97, 103, 101,  58,  10
+  ],
+  provider: $ {
+    _events: [Object: null prototype] {},
+    _eventsCount: 0,
+    _maxListeners: undefined,
+    subscriptionManager: { logSubscriptions: Map(0) {}, currentBlockNumber: 0 },
+    pollInstance: undefined,
+    thorClient: n {
+      accounts: [K],
+      nodes: [ne],
+      blocks: [z],
+      logs: [te],
+      transactions: [re],
+      contracts: [X],
+      forkDetector: [H],
+      gas: [ee],
+      debug: [Z],
+      httpClient: [n]
+    },
+    wallet: ce { accounts: [Array], gasPayer: undefined },
+    enableDelegation: false,
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false
+  },
+  privateKey: Uint8Array(32) [
+     65, 141, 236, 102, 205, 146,   5,  92,
+    112,  15,  59,  72,  97, 197, 101,   4,
+    100, 189, 108, 214, 107, 145, 147, 125,
+      1,  85,  40, 179,  16,  85,  96,  48
+  ]
+}
+Signing transaction...
+Signed transaction: n {
+  body: {
+    blockRef: '0x014fba2fe933348b',
+    chainTag: 39,
+    clauses: [ [Object] ],
+    dependsOn: null,
+    expiration: 32,
+    gas: 137253,
+    nonce: '0x3cdcef1aba1e591e',
+    maxFeePerGas: 10000000000000,
+    maxPriorityFeePerGas: 0
+  },
+  transactionType: 'eip1559',
+  signature: Uint8Array(65) [
+    136,  56, 219,  74,  20, 175,  82, 127,  15,  56, 240,
+     97, 251,  44, 165, 221, 123, 249, 247, 237,  41,  11,
+    236,   4, 219,   5, 149, 167,  63,   6, 229, 144,  67,
+     71,  93, 235,  31,  65, 188,   1,  44,  33, 112, 105,
+    141, 253, 203,  36, 205,  16, 160, 170, 185, 177,  60,
+    252, 223,  66, 180,  13,  40, 137, 242,  44,   1
+  ]
+}
+Sending transaction...
+Transaction sent, ID: 0x141cf75dda5cdb628f26666260ce644c0969368abf386968de32ac9e88656355
+Ataque registrado correctamente
+2025-06-16 11:35:45,535 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.0003180503845215, 'Total Fwd Packets': 1171, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 142034.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 121.2929120409906, 'Fwd Packet Length Std': 72.6518465266493, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 141988.8403947147, 'Flow Packets/s': 1170.6276814157943, 'Fwd Packets/s': 1170.6276814157943, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 121.2929120409906, 'Packet Length Std': 72.6518465266493, 'Packet Length Variance': 5278.290803731802, 'Flow IAT Mean': 0.0008549726926363431, 'Flow IAT Std': 0.001543525778785283, 'Flow IAT Max': 0.009351015090942383, 'Flow IAT Min': 2.86102294921875e-06, 'Fwd IAT Total': 1.0003180503845215, 'Fwd IAT Mean': 0.0008549726926363431, 'Fwd IAT Std': 0.001543525778785283, 'Fwd IAT Max': 0.009351015090942383, 'Fwd IAT Min': 2.86102294921875e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 0, 'SYN Flag Count': 391, 'RST Flag Count': 0, 'PSH Flag Count': 390, 'ACK Flag Count': 780, 'Fwd PSH Flags': 390, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 11:35:46,986 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.001922845840454, 'Total Fwd Packets': 1212, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 147056.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 121.33333333333333, 'Fwd Packet Length Std': 72.6697247062963, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 146773.77665407298, 'Flow Packets/s': 1209.6739834126893, 'Fwd Packets/s': 1209.6739834126893, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 121.33333333333333, 'Packet Length Std': 72.6697247062963, 'Packet Length Variance': 5280.88888888889, 'Flow IAT Mean': 0.0008273516480928606, 'Flow IAT Std': 0.0016958077817923892, 'Flow IAT Max': 0.025491952896118164, 'Flow IAT Min': 1.9073486328125e-06, 'Fwd IAT Total': 1.001922845840454, 'Fwd IAT Mean': 0.0008273516480928606, 'Fwd IAT Std': 0.0016958077817923892, 'Fwd IAT Max': 0.025491952896118164, 'Fwd IAT Min': 1.9073486328125e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 0, 'SYN Flag Count': 404, 'RST Flag Count': 0, 'PSH Flag Count': 404, 'ACK Flag Count': 808, 'Fwd PSH Flags': 404, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 11:35:48,902 - INFO - [192.168.1.149] Metrics: {'Destination Port': 8080, 'Flow Duration': 2.667491912841797, 'Total Fwd Packets': 618, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 75010.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 224.0, 'Fwd Packet Length Min': 66.0, 'Fwd Packet Length Mean': 121.37540453074433, 'Fwd Packet Length Std': 72.6498329661834, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 28120.047764301762, 'Flow Packets/s': 231.6783031374282, 'Fwd Packets/s': 231.6783031374282, 'Bwd Packets/s': 0.0, 'Min Packet Length': 66.0, 'Max Packet Length': 224.0, 'Packet Length Mean': 121.37540453074433, 'Packet Length Std': 72.6498329661834, 'Packet Length Variance': 5277.998230014348, 'Flow IAT Mean': 0.004323325628592864, 'Flow IAT Std': 0.08556097447432745, 'Flow IAT Max': 2.1273350715637207, 'Flow IAT Min': 2.86102294921875e-06, 'Fwd IAT Total': 2.667491912841797, 'Fwd IAT Mean': 0.004323325628592864, 'Fwd IAT Std': 0.08556097447432745, 'Fwd IAT Max': 2.1273350715637207, 'Fwd IAT Min': 2.86102294921875e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 0, 'SYN Flag Count': 205, 'RST Flag Count': 0, 'PSH Flag Count': 206, 'ACK Flag Count': 412, 'Fwd PSH Flags': 206, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 11:35:48,914 - WARNING - 192.168.1.149 reached max warnings (3). Adding to blacklist.
+2025-06-16 11:35:48,914 - INFO - Logging attack for 192.168.1.149: DoS Hulk
+2025-06-16 11:35:51,306 - INFO - Attack logged successfully for 192.168.1.149. Tx Id: Estimated gas result: { totalGas: 137253, reverted: false, revertReasons: [], vmErrors: [] }
+Building transaction body...
+Transaction body: {
+  blockRef: '0x014fbccb6446aa57',
+  chainTag: 39,
+  clauses: [
+    {
+      to: '0x3503543A2dAD949457deC8CEBf09F9d28Ec42416',
+      value: '0',
+      data: '0x7ce6038900000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000d3139322e3136382e312e313439000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008446f532048756c6b000000000000000000000000000000000000000000000000'
+    }
+  ],
+  dependsOn: null,
+  expiration: 32,
+  gas: 137253,
+  gasPriceCoef: undefined,
+  maxFeePerGas: '0x09184e72a000',
+  maxPriorityFeePerGas: '0x00',
+  nonce: '0x34d68a4f67ca5778',
+  reserved: undefined
+}
+Getting signer for address: 0xDfCdED32c7339247B1eb88852BFdB30310c3F6Ec
+Signer retrieved: n {
+  MESSAGE_PREFIX: Uint8Array(26) [
+     25,  69, 116, 104, 101, 114, 101,
+    117, 109,  32,  83, 105, 103, 110,
+    101, 100,  32,  77, 101, 115, 115,
+     97, 103, 101,  58,  10
+  ],
+  provider: $ {
+    _events: [Object: null prototype] {},
+    _eventsCount: 0,
+    _maxListeners: undefined,
+    subscriptionManager: { logSubscriptions: Map(0) {}, currentBlockNumber: 0 },
+    pollInstance: undefined,
+    thorClient: n {
+      accounts: [K],
+      nodes: [ne],
+      blocks: [z],
+      logs: [te],
+      transactions: [re],
+      contracts: [X],
+      forkDetector: [H],
+      gas: [ee],
+      debug: [Z],
+      httpClient: [n]
+    },
+    wallet: ce { accounts: [Array], gasPayer: undefined },
+    enableDelegation: false,
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false
+  },
+  privateKey: Uint8Array(32) [
+     65, 141, 236, 102, 205, 146,   5,  92,
+    112,  15,  59,  72,  97, 197, 101,   4,
+    100, 189, 108, 214, 107, 145, 147, 125,
+      1,  85,  40, 179,  16,  85,  96,  48
+  ]
+}
+Signing transaction...
+Signed transaction: n {
+  body: {
+    blockRef: '0x014fbccb6446aa57',
+    chainTag: 39,
+    clauses: [ [Object] ],
+    dependsOn: null,
+    expiration: 32,
+    gas: 137253,
+    nonce: '0x34d68a4f67ca5778',
+    maxFeePerGas: 10000000000000,
+    maxPriorityFeePerGas: 0
+  },
+  transactionType: 'eip1559',
+  signature: Uint8Array(65) [
+     36,  60, 159,  16, 147,  15, 222, 197, 102, 218, 162,
+     83, 227, 219, 241,  37,  98, 121, 155, 178, 179, 155,
+    145,  77,   9, 255, 146,  28, 130,  81,  57, 207,  23,
+    138,  93,  68, 218, 119, 142, 161, 243,  86, 203, 136,
+    148,  93,  35, 211, 116,  60,  41,  92, 215, 123, 183,
+     80,  13,  19,  80,  13, 127, 235, 142,   5,   0
+  ]
+}
+Sending transaction...
+Transaction sent, ID: 0x9baa698af0defd7842bbba72b14c0afdbfe48c3924dae84c0ca6c977f338ebc2
+Ataque registrado correctamente
+2025-06-16 14:25:29,651 - INFO - [192.168.1.100] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.0097830295562744, 'Total Fwd Packets': 484, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 29040.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 60.0, 'Fwd Packet Length Min': 60.0, 'Fwd Packet Length Mean': 60.0, 'Fwd Packet Length Std': 0.0, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 28758.653245302557, 'Flow Packets/s': 479.3108874217093, 'Fwd Packets/s': 479.3108874217093, 'Bwd Packets/s': 0.0, 'Min Packet Length': 60.0, 'Max Packet Length': 60.0, 'Packet Length Mean': 60.0, 'Packet Length Std': 0.0, 'Packet Length Variance': 0.0, 'Flow IAT Mean': 0.0020906480943194087, 'Flow IAT Std': 0.0029818365667079686, 'Flow IAT Max': 0.024343013763427734, 'Flow IAT Min': 7.152557373046875e-06, 'Fwd IAT Total': 1.0097830295562744, 'Fwd IAT Mean': 0.0020906480943194087, 'Fwd IAT Std': 0.0029818365667079686, 'Fwd IAT Max': 0.024343013763427734, 'Fwd IAT Min': 7.152557373046875e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 0, 'SYN Flag Count': 484, 'RST Flag Count': 0, 'PSH Flag Count': 0, 'ACK Flag Count': 0, 'Fwd PSH Flags': 0, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 14:25:30,654 - INFO - [192.168.1.100] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.0023939609527588, 'Total Fwd Packets': 412, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 24720.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 60.0, 'Fwd Packet Length Min': 60.0, 'Fwd Packet Length Mean': 60.0, 'Fwd Packet Length Std': 0.0, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 24660.962618434023, 'Flow Packets/s': 411.0160436405671, 'Fwd Packets/s': 411.0160436405671, 'Bwd Packets/s': 0.0, 'Min Packet Length': 60.0, 'Max Packet Length': 60.0, 'Packet Length Mean': 60.0, 'Packet Length Std': 0.0, 'Packet Length Variance': 0.0, 'Flow IAT Mean': 0.0024389147468436953, 'Flow IAT Std': 0.0034927114871796975, 'Flow IAT Max': 0.02156209945678711, 'Flow IAT Min': 7.867813110351562e-06, 'Fwd IAT Total': 1.0023939609527588, 'Fwd IAT Mean': 0.0024389147468436953, 'Fwd IAT Std': 0.0034927114871796975, 'Fwd IAT Max': 0.02156209945678711, 'Fwd IAT Min': 7.867813110351562e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 0, 'SYN Flag Count': 412, 'RST Flag Count': 0, 'PSH Flag Count': 0, 'ACK Flag Count': 0, 'Fwd PSH Flags': 0, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 14:25:31,654 - INFO - [192.168.1.100] Metrics: {'Destination Port': 8080, 'Flow Duration': 1.000432014465332, 'Total Fwd Packets': 492, 'Total Backward Packets': 0, 'Total Length of Fwd Packets': 29520.0, 'Total Length of Bwd Packets': 0, 'Fwd Packet Length Max': 60.0, 'Fwd Packet Length Min': 60.0, 'Fwd Packet Length Mean': 60.0, 'Fwd Packet Length Std': 0.0, 'Bwd Packet Length Max': 0, 'Bwd Packet Length Min': 0, 'Bwd Packet Length Mean': 0, 'Bwd Packet Length Std': 0, 'Flow Bytes/s': 29507.252440113665, 'Flow Packets/s': 491.7875406685611, 'Fwd Packets/s': 491.7875406685611, 'Bwd Packets/s': 0.0, 'Min Packet Length': 60.0, 'Max Packet Length': 60.0, 'Packet Length Mean': 60.0, 'Packet Length Std': 0.0, 'Packet Length Variance': 0.0, 'Flow IAT Mean': 0.0020375397443285785, 'Flow IAT Std': 0.0027788006597955456, 'Flow IAT Max': 0.014796018600463867, 'Flow IAT Min': 8.106231689453125e-06, 'Fwd IAT Total': 1.000432014465332, 'Fwd IAT Mean': 0.0020375397443285785, 'Fwd IAT Std': 0.0027788006597955456, 'Fwd IAT Max': 0.014796018600463867, 'Fwd IAT Min': 8.106231689453125e-06, 'Bwd IAT Total': 0, 'Bwd IAT Mean': 0, 'Bwd IAT Std': 0, 'Bwd IAT Max': 0, 'Bwd IAT Min': 0, 'FIN Flag Count': 0, 'SYN Flag Count': 492, 'RST Flag Count': 0, 'PSH Flag Count': 0, 'ACK Flag Count': 0, 'Fwd PSH Flags': 0, 'Bwd PSH Flags': 0, 'Fwd URG Flags': 0, 'Bwd URG Flags': 0}
+2025-06-16 14:25:31,671 - WARNING - 192.168.1.100 reached max warnings (3). Adding to blacklist.
+2025-06-16 14:25:31,671 - INFO - Logging attack for 192.168.1.100: DoS Hulk
+2025-06-16 14:25:34,483 - INFO - Attack logged successfully for 192.168.1.100. Tx Id: Estimated gas result: { totalGas: 137253, reverted: false, revertReasons: [], vmErrors: [] }
+Building transaction body...
+Transaction body: {
+  blockRef: '0x014fc0c437c6c062',
+  chainTag: 39,
+  clauses: [
+    {
+      to: '0x3503543A2dAD949457deC8CEBf09F9d28Ec42416',
+      value: '0',
+      data: '0x7ce6038900000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000d3139322e3136382e312e313030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008446f532048756c6b000000000000000000000000000000000000000000000000'
+    }
+  ],
+  dependsOn: null,
+  expiration: 32,
+  gas: 137253,
+  gasPriceCoef: undefined,
+  maxFeePerGas: '0x09184e72a000',
+  maxPriorityFeePerGas: '0x00',
+  nonce: '0x4a2c35e1efffb5f9',
+  reserved: undefined
+}
+Getting signer for address: 0xDfCdED32c7339247B1eb88852BFdB30310c3F6Ec
+Signer retrieved: n {
+  MESSAGE_PREFIX: Uint8Array(26) [
+     25,  69, 116, 104, 101, 114, 101,
+    117, 109,  32,  83, 105, 103, 110,
+    101, 100,  32,  77, 101, 115, 115,
+     97, 103, 101,  58,  10
+  ],
+  provider: $ {
+    _events: [Object: null prototype] {},
+    _eventsCount: 0,
+    _maxListeners: undefined,
+    subscriptionManager: { logSubscriptions: Map(0) {}, currentBlockNumber: 0 },
+    pollInstance: undefined,
+    thorClient: n {
+      accounts: [K],
+      nodes: [ne],
+      blocks: [z],
+      logs: [te],
+      transactions: [re],
+      contracts: [X],
+      forkDetector: [H],
+      gas: [ee],
+      debug: [Z],
+      httpClient: [n]
+    },
+    wallet: ce { accounts: [Array], gasPayer: undefined },
+    enableDelegation: false,
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false
+  },
+  privateKey: Uint8Array(32) [
+     65, 141, 236, 102, 205, 146,   5,  92,
+    112,  15,  59,  72,  97, 197, 101,   4,
+    100, 189, 108, 214, 107, 145, 147, 125,
+      1,  85,  40, 179,  16,  85,  96,  48
+  ]
+}
+Signing transaction...
+Signed transaction: n {
+  body: {
+    blockRef: '0x014fc0c437c6c062',
+    chainTag: 39,
+    clauses: [ [Object] ],
+    dependsOn: null,
+    expiration: 32,
+    gas: 137253,
+    nonce: '0x4a2c35e1efffb5f9',
+    maxFeePerGas: 10000000000000,
+    maxPriorityFeePerGas: 0
+  },
+  transactionType: 'eip1559',
+  signature: Uint8Array(65) [
+    133,  39,  46,  80, 198, 240,  53,  42, 126, 175,  13,
+    207,  38, 232,  32,  92, 158, 164, 148, 108,  98,  10,
+    183, 118, 203,  79,  23, 216, 147, 167,  38, 189,  63,
+    143, 239,  46, 195, 224,  70,   8,  56,  34,  20, 166,
+     84, 116,  89, 206, 132, 145, 203,  73, 141, 114, 216,
+    190, 164,  32, 249, 226, 210, 168, 101,  96,   0
+  ]
+}
+Sending transaction...
+Transaction sent, ID: 0x6fa1806a3716cc5c27f9cd594a996ec2a3748f776b63bf3cd81b51c4f2515cd6
+Ataque registrado correctamente
