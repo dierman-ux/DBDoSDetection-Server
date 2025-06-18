@@ -68,16 +68,16 @@ python client.py --type hulk -url http://192.168.1.1:8080 --duration 60
 - Web interface for visualization and control  
 - Extensible and modular architecture  
 
-## 📖 Documentation
+## Documentation
 
 The `docs/` folder includes the complete technical documentation:
 
-- `docs/01_introduction.md` → Project background and goals  
-- `docs/02_detection_pipeline.md` → Feature extraction and ML logic  
-- `docs/03_blacklist_blockchain.md` → VeChain integration  
-- `docs/04_web_interface.md` → Frontend behavior and API  
-- `docs/05_testing_results.md` → Metrics, performance, plots  
-- `docs/06_cost_estimate.md` → Hardware/software/token costs  
+- [Introduction](docs/01_introduction.md)
+- [Detection Pipeline](docs/02_detection_pipeline.md)
+- [Blacklist & Blockchain](docs/03_blacklist_blockchain.md)
+- [Web Interface](docs/04_web_interface.md)
+- [Testing & Results](docs/05_testing_results.md)
+- [Cost Estimate](docs/06_cost_estimate.md)
 
 ## 📝 License
 
