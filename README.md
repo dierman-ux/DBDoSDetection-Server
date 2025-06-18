@@ -79,6 +79,6 @@ The `docs/` folder includes the complete technical documentation:
 - [Testing & Results](docs/05_testing_results.md)
 - [Cost Estimate](docs/06_cost_estimate.md)
 
-## 📝 License
+## License
 
 Free Usage
