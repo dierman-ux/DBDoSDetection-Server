@@ -1,3 +1,21 @@
+"""
+metrics.py
+
+This module captures live network traffic using Scapy, extracts statistical features 
+from flows (e.g., packet sizes, TCP flags, IATs), and performs real-time DoS detection 
+using a machine learning model.
+
+If an attack is detected, the source IP is warned or blacklisted. All detection activity 
+can be logged, and blacklisted entries can be synchronized with a blockchain-based registry.
+
+Main components:
+- Packet sniffer and parser
+- Feature extractor per source IP flow
+- KNN-based attack prediction (via AttackDetector)
+- Blacklist management and logging (via BlacklistManager)
+- Real-time flow segmentation with timeout
+"""
+
 from scapy.all import sniff, IP, TCP, UDP
 import pandas as pd
 import numpy as np
@@ -14,8 +32,12 @@ import signal
 import threading
 
 
-class MetricsExtractor:
+class MetricsExtractor:  
     def __init__(self, iface=None):
+        """
+        Initializes the metrics extractor with a given network interface.
+        Sets up logger, detector, and blacklist manager.
+        """  
         self.iface = iface
         self._stop_sniff = False
         self.logger = setup_logger('packets.log')
@@ -26,6 +48,9 @@ class MetricsExtractor:
         
 
     def reset_metrics_for_ip(self, ip):
+        """
+        Initializes or resets the metrics dictionary for a given source IP.
+        """
         self.flows[ip] = {
             'start_time': None,
             'end_time': None,
@@ -48,6 +73,10 @@ class MetricsExtractor:
         }
 
     def process_packet(self, pkt):
+        """
+        Processes a single packet and updates flow metrics.
+        If the flow duration exceeds 1s, it computes the metrics and returns them.
+        """
         if IP not in pkt:
             return None
 
@@ -64,6 +93,7 @@ class MetricsExtractor:
             flow['start_time'] = pkt_time
         flow['end_time'] = pkt_time
 
+        # Determine destination port
         dport = 0
         if TCP in pkt:
             dport = pkt[TCP].dport
@@ -76,12 +106,14 @@ class MetricsExtractor:
         pkt_len = len(pkt)
         flags = pkt[TCP].flags if TCP in pkt else 0
 
+        # Count TCP flags
         if flags & 0x01: flow['fin_flag_count'] += 1
         if flags & 0x02: flow['syn_flag_count'] += 1
         if flags & 0x04: flow['rst_flag_count'] += 1
         if flags & 0x08: flow['psh_flag_count'] += 1
         if flags & 0x10: flow['ack_flag_count'] += 1
 
+        # Directional metrics (fwd/bwd)
         if pkt[IP].src == src:
             flow['fwd_packet_lengths'].append(pkt_len)
             if flags & 0x08: flow['fwd_psh_flags'] += 1
@@ -97,6 +129,7 @@ class MetricsExtractor:
                 flow['bwd_iat_list'].append(pkt_time - flow['bwd_times'][-1])
             flow['bwd_times'].append(pkt_time)
 
+        # If flow is long enough, return computed metrics
         flow_duration = flow['end_time'] - flow['start_time']
         if flow_duration >= 1:
             metrics = self.get_metrics(flow)
@@ -107,6 +140,10 @@ class MetricsExtractor:
 
     @staticmethod
     def safe_stats(data):
+        """
+        Compute safe statistics from a list of numeric values.
+        Returns 0 for empty lists.
+        """
         return {
             'sum': float(np.sum(data)) if data else 0,
             'mean': float(np.mean(data)) if data else 0,
@@ -118,6 +155,9 @@ class MetricsExtractor:
         }
 
     def get_metrics(self, flow):
+        """
+        Computes all relevant metrics for a completed flow window.
+        """
         flow_duration = flow['end_time'] - flow['start_time']
 
         fwd_stats = self.safe_stats(flow['fwd_packet_lengths'])
@@ -189,6 +229,10 @@ class MetricsExtractor:
         }
 
     def packet_callback(self, pkt):
+        """
+        Callback function triggered by Scapy for every captured packet.
+        Applies detection logic and blacklist enforcement if needed.
+        """
         self.last_packet_time = time.time()
         result = self.process_packet(pkt)
         if result:
@@ -200,7 +244,7 @@ class MetricsExtractor:
                 self.logger.info(f"[{src}] Metrics: {metrics}")
                 prediction = self.detector.predict(metrics)
                 print(f"Prediction: {prediction}")
-                if prediction != "BENIGNO":
+                if prediction != "BENIGN":
                     warnings, blacklisted = self.blacklist_manager.add_warning(src, "DoS " + prediction)
                     print(f"[{prediction}] Warning {warnings} for {src}")
                     print(f"Current blacklist state for {src}: {self.blacklist_manager.blacklist_local[src]}")
@@ -211,6 +255,10 @@ class MetricsExtractor:
                     self.blacklist_manager.reset_warnings(src)
 
     def start_sniffing(self, count=0, idle_timeout=5, timeout=300):
+        """
+        Starts the packet sniffer using Scapy.
+        Stops after the timeout or if idle time exceeds the configured threshold.
+        """
         print(f"Starting sniffing on interface: {self.iface}")
         self.reset_metrics()
         self.last_packet_time = None
@@ -227,6 +275,9 @@ class MetricsExtractor:
         print("Sniffing finished.")
 
     def stop_filter(self, pkt):
+        """
+        Determines whether sniffing should be stopped (on Ctrl+C or inactivity).
+        """
         if self._stop_sniff:
             return True
     
@@ -244,6 +295,9 @@ class MetricsExtractor:
             return False
 
     def reset_metrics(self):
+        """
+        Clears all stored flow metrics.
+        """
         self.flows.clear()
     
     
@@ -255,6 +309,7 @@ if __name__ == "__main__":
         extractor._stop_sniff = True
         sys.exit(0)
 
+    # Parse IP and port from CLI or prompt
     interfaces = netifaces.interfaces()
     interfaz = None
     
@@ -288,6 +343,7 @@ if __name__ == "__main__":
     if not (re.match(port_regex, port) and 0 <= int(port) <= 65535):
         port = "8080"
 
+    # Detect correct interface based on provided IP
     for interface in interfaces:
         try:
             ip_address = netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr']
@@ -302,10 +358,7 @@ if __name__ == "__main__":
     if not interfaz:
         raise RuntimeError(f"No se encontró una interfaz con IP '{src}'")
 
+    # Launch the extractor and bind Ctrl+C handler
     extractor = MetricsExtractor(iface=interfaz)
-
-
-
     signal.signal(signal.SIGINT, signal_handler)
-
     extractor.start_sniffing(timeout=900)

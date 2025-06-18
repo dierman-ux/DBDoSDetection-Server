@@ -1,3 +1,20 @@
+"""
+server.py
+
+This module starts a threaded HTTP REST server with the following features:
+- Serves a frontend HTML interface for interacting with the system
+- Provides GET/POST/DELETE endpoints for viewing and managing the blacklist
+- Periodically fetches the blacklist from the VeChain blockchain
+- Allows logging and deleting attack records via smart contract scripts
+
+It integrates with:
+- blacklist.py for blockchain interaction
+- frontend/frontend.html as UI
+- Uses Python's built-in HTTP server (multithreaded)
+
+The server listens on the local IP (determined automatically) and port 8080.
+"""
+
 import socket
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from socketserver import ThreadingMixIn
@@ -10,20 +27,22 @@ import time
 from urllib.parse import urlparse
 import os
 
-
-# Variable global para el intervalo y control del evento
-auto_update_interval = 10
+# Interval in seconds between automatic blacklist updates
+auto_update_interval = 30
 auto_update_event = threading.Event()
 stop_event = threading.Event()
 
 httpd=None
 
-# Ruta absoluta al HTML frontend
+# Load HTML for the frontend interface at root URL
 frontend_path = os.path.join(os.path.dirname(__file__), "frontend", "frontend.html")
 with open(frontend_path, "r", encoding="utf-8") as f:
     FRONTEND_HTML = f.read()
 
 def periodic_update():
+    """
+    Periodically refreshes the blacklist from VeChain until stop_event is set.
+    """
     while not stop_event.is_set():
         start = time.time()
 
@@ -38,9 +57,15 @@ def periodic_update():
             break
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
+    """
+    Multithreaded HTTP server to handle multiple clients concurrently.
+    """
     daemon_threads = True
 
 def get_local_ip():
+    """
+    Returns the local IP address used to reach the internet.
+    """
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         s.connect(('8.8.8.8', 80))
@@ -52,17 +77,29 @@ def get_local_ip():
     return ip
 
 class SimpleRESTHandler(BaseHTTPRequestHandler):
+    """
+    Handles HTTP requests to REST endpoints and frontend.
+    """
     blacklist_ips = set()
 
     def load_blacklist(self):
+        """
+        Loads current IP blacklist into memory for quick checks.
+        """
         attacks = get_blacklist()
         self.blacklist_ips = set(attack['ip'] for attack in attacks if 'ip' in attack)
 
     def client_ip_blocked(self):
+        """
+        Checks if the client IP is in the blacklist.
+        """
         client_ip = self.client_address[0]
         return client_ip in self.blacklist_ips
     
     def do_GET(self):
+        """
+        Handles GET requests for root and /blacklist.
+        """
         self.load_blacklist()
 
         if self.client_ip_blocked():
@@ -99,6 +136,9 @@ class SimpleRESTHandler(BaseHTTPRequestHandler):
         self.wfile.write(json.dumps({"error": "Endpoint not found"}).encode("utf-8"))
 
     def do_POST(self):
+        """
+        Handles POST requests for updating settings and logging new attacks.
+        """
         self.load_blacklist()
         global auto_update_interval
 
@@ -192,6 +232,9 @@ class SimpleRESTHandler(BaseHTTPRequestHandler):
     from http.server import BaseHTTPRequestHandler
 
     def do_DELETE(self):
+        """
+        Handles DELETE requests to remove specific attack entries from blockchain.
+        """
         parsed_path = urlparse(self.path)
         path_parts = parsed_path.path.strip('/').split('/')
         # Esperamos algo como ['blacklist', 'delete', '5']
@@ -222,6 +265,9 @@ class SimpleRESTHandler(BaseHTTPRequestHandler):
     # Opcionalmente también implementa do_GET, do_POST, etc.
 
 def add_test_attacks():
+    """
+    Adds hardcoded test attack records to the blockchain.
+    """
     test_attacks = [
         ("1.1.1.1", "DoS Test"),
         ("2.2.2.2", "DoS Test"),
@@ -233,6 +279,9 @@ def add_test_attacks():
         log_attack(ip, attack_type)
 
 def signal_handler(sig, frame):
+    """
+    Handles SIGINT to allow clean shutdown of server and update thread.
+    """
     print("\n[INFO] Shutting down server...")
     stop_event.set()
     auto_update_event.set()  
@@ -244,16 +293,17 @@ def signal_handler(sig, frame):
 
 
 def main():
+    """
+    Starts the HTTP server and begins periodic blacklist updates.
+    """
     ip = get_local_ip()
     port = 8080
     server_address = (ip, port)
     httpd = ThreadedHTTPServer(server_address, SimpleRESTHandler)
 
-    # Lanzar hilo que actualiza blacklist
     update_thread = threading.Thread(target=periodic_update, daemon=True)
     
 
-    # Capturar Ctrl+C para parada limpia
     signal.signal(signal.SIGINT, signal_handler)
 
     print(f"Updating blacklist & Starting HTTP server at http://{ip}:{port}")
@@ -263,7 +313,6 @@ def main():
     except KeyboardInterrupt:
         print("\nServer stopped by user")
 
-    # Esperar a que el hilo de actualización termine
     stop_event.set()
     auto_update_event.set()
     update_thread.join(timeout=5)

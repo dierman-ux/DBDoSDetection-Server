@@ -1,3 +1,18 @@
+"""
+blacklist.py
+
+Provides functions to fetch, parse, and manage the blacklist of detected DoS attacks 
+stored on the VeChain blockchain. Uses Node.js scripts to interact with smart contracts 
+and periodically syncs local memory with blockchain state.
+
+Main features:
+- fetch_blacklist: downloads all attacks from VeChain
+- get_blacklist: returns local cached copy
+- force_update / start_periodic_update: sync options
+- log_attack / delete_attack: log or remove specific attack
+- clear_blacklist: deletes all recorded attacks
+"""
+
 import subprocess
 import json
 import threading
@@ -5,10 +20,21 @@ import time
 import re
 import os
 
+# Global blacklist and lock to ensure thread-safe access
 _blacklist = []
 _blacklist_lock = threading.Lock()
 
 def _run_node_script(script: str, args: list = []):
+    """
+    Executes a Node.js or ts-node script located in the ./blacklist directory.
+
+    Args:
+        script (str): Name of the script file to execute
+        args (list): Additional command-line arguments
+
+    Returns:
+        str or None: Output from the script if successful; otherwise None
+    """
     script_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "blacklist"))
     script_path = os.path.join(script_dir, script)
 
@@ -39,7 +65,15 @@ def _run_node_script(script: str, args: list = []):
         return None
 
 def _parse_total_attacks(output: str):
-    # Example output: "Number of Registered Attacks: [ 4n ]"
+    """
+    Extracts the number of registered attacks from a VeChain query output string.
+
+    Args:
+        output (str): Raw text output from Node.js script
+
+    Returns:
+        int or None: Parsed attack count
+    """
     match = re.search(r"Number of Registered Attacks:\s*\[?\s*(\d+)n?\s*\]?", output)
     if match:
         return int(match.group(1))
@@ -49,6 +83,9 @@ def _parse_total_attacks(output: str):
 
 
 def fetch_blacklist():
+    """
+    Retrieves all registered attacks from VeChain and stores them in local memory.
+    """
     global _blacklist
     with _blacklist_lock:
         _blacklist = []
@@ -89,10 +126,22 @@ def fetch_blacklist():
 
 
 def get_blacklist():
+    """
+    Returns the current local blacklist snapshot.
+
+    Returns:
+        list: List of attack dictionaries (IP, attack type, timestamp)
+    """
     with _blacklist_lock:
         return list(_blacklist)
 
 def start_periodic_update(interval=10):
+    """
+    Starts a background thread to periodically fetch the updated blacklist from VeChain.
+
+    Args:
+        interval (int): Time in seconds between each update cycle
+    """
     def update_loop():
         while True:
             print("[INFO] Updating blacklist...")
@@ -104,6 +153,9 @@ def start_periodic_update(interval=10):
     thread.start()
 
 def force_update():
+    """
+    Triggers an immediate update of the blacklist and prints the current entries.
+    """
     print("[INFO] Forcing manual blacklist update...")
     fetch_blacklist()
     print(f"[INFO] Blacklist manually updated with {len(_blacklist)} attacks.")
@@ -116,7 +168,9 @@ def force_update():
         print("-" * 40)
         
 def clear_blacklist():
-    """Runs the deleteAllAttacks.cjs script to remove all attacks from VeChain."""
+    """
+    Executes a script that deletes all attack entries on the blockchain.
+    """
     output = _run_node_script("deleteAllAttacks.cjs")
     if output:
         print(f"[INFO] All attacks deleted successfully. Tx Id: {output}")
@@ -124,7 +178,16 @@ def clear_blacklist():
         print("[ERROR] Failed to delete attacks.")
 
 def log_attack(ip, attack_type):
-    # Absolute path to the Node.js script directory
+    """
+    Logs a new attack to the VeChain blockchain via Node.js script.
+
+    Args:
+        ip (str): IP address of the attacker
+        attack_type (str): Type of detected attack
+
+    Returns:
+        dict or None: Summary of transaction result or None if error
+    """
     script_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "blacklist"))
     script_path = os.path.join(script_dir, "sendAttackLog.cjs")
 
@@ -161,15 +224,21 @@ def log_attack(ip, attack_type):
         return None
     
 def delete_attack(index):
-    # Ejecuta el script deleteAttack.cjs con el índice del ataque a borrar
+    """
+    Deletes a specific attack entry on VeChain based on its index.
+
+    Args:
+        index (int): Index of the attack in the smart contract list
+
+    Returns:
+        dict or None: Summary of transaction or None if failed
+    """
     output = _run_node_script("deleteAttack.cjs", [str(index)])
 
     if output:
-        # Extraer el ID de la transacción (asumiendo que el script imprime algo como "Transaction sent, ID: 0x...")
         tx_match = re.search(r"Transaction sent, ID:\s*(0x[a-fA-F0-9]+)", output)
         tx_id = tx_match.group(1) if tx_match else "Not found"
 
-        # Extraer gas estimado si está presente
         gas_match = re.search(r"totalGas:\s*(\d+)", output)
         gas = gas_match.group(1) if gas_match else "Unknown"
 

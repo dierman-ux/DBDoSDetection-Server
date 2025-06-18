@@ -26,14 +26,23 @@ def setup_logger(filename='server.log', logger_name=__name__):
     Returns:
         logging.Logger: Configured logger instance.
     """
+    # Retrieve or create a logger with the given name
     logger = logging.getLogger(logger_name)
+
+    # Only configure the logger once to avoid duplicate handlers
     if not logger.hasHandlers():
-        # Configure handler only if not already configured
+        # Define a file handler that logs to the specified file
         handler = logging.FileHandler(filename)
+
+        # Define log format: timestamp - log level - message
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
+
+        # Add handler to the logger
         logger.addHandler(handler)
         logger.setLevel(logging.INFO)
-        logger.propagate = False  # Prevent double logging if root logger configured elsewhere
+
+        # Prevent propagation to root logger to avoid duplicate logs
+        logger.propagate = False
 
     return logger
