@@ -30,6 +30,8 @@ import sys
 import argparse
 import signal
 import threading
+import platform
+
 
 
 class MetricsExtractor:  
@@ -343,14 +345,22 @@ if __name__ == "__main__":
     if not (re.match(port_regex, port) and 0 <= int(port) <= 65535):
         port = "8080"
 
-    # Detect correct interface based on provided IP
+    # Detect OS for interface compatibility
+    # Detect the operating system
+    system_name = platform.system()
+    is_windows = system_name == "Windows"
+
+    print(f"[INFO] Detected OS: {system_name}")
+
     for interface in interfaces:
         try:
             ip_address = netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr']
             if ip_address.startswith(src):
-                interfaz = interface
                 print(f"Interface: {interface}, IP: {ip_address}")
-                interfaz = r"\Device\NPF_" + interfaz
+                if is_windows:
+                    interfaz = r"\Device\NPF_" + interface
+                else:
+                    interfaz = interface
                 break
         except Exception:
             continue
