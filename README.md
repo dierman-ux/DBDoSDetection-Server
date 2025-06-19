@@ -10,18 +10,41 @@ This project is a modular network security tool that captures traffic, extracts 
 
 ```
 .
-├── server.py              → REST HTTP server with web interface  
-├── metrics.py             → Traffic capture and feature extraction (Scapy)  
-├── detection.py           → Machine learning-based attack detection  
-├── logger.py              → Unified logger configuration  
-├── blacklist/             → Node.js/CJS scripts to interact with VeChain  
-│   ├── sendAttackLog.cjs  
-│   ├── getAttack.cjs  
-│   └── ...  
-├── frontend/              → Interactive HTML interface  
-│   └── frontend.html  
-├── requirements.txt       → Python dependencies  
-└── README.md              → This file  
+├── Blockchain/                      → Smart contract source code for both HLF and VeChain
+│   ├── HLF/                         → Chaincode written in Go for Hyperledger Fabric
+│   │   └── chaincode.go
+│   └── VeChain/                     → Smart contract in Solidity for VeChainThor
+│       └── smartcontract.sol
+│
+├── models/                          → Dataset and script used to train and export ML models
+│   ├── knngenerator.py              → Script for training and exporting the KNN model
+│   └── dataset.csv                  → Final preprocessed and labeled dataset for training
+│
+├── client/                          → Traffic simulator to generate test flows
+│   └── client.py                    → Simulates benign and various DoS attack patterns
+│
+├── DoSDetector/                     → Core detection logic and packet-level feature analysis
+│   ├── metrics.py                   → Extracts statistical features from captured traffic
+│   ├── logger.py                    → Central logging utility for all detection modules
+│   ├── blacklist.py                 → Local blacklist logic and warning counter
+│   ├── detection.py                 → KNN-based traffic classifier (loads trained model)
+│   └── blacklist/                   → Node.js scripts for blockchain interaction (VeChain)
+│       └── *.cjs
+│
+├── Server/                          → HTTP server and REST API for interacting with the system
+│   ├── server.py                    → Multithreaded REST server exposing web interface
+│   ├── blacklist.py                 → Handles server-side access to blockchain logging
+│   └── blacklist/                   → Duplicate of blockchain scripts for server use
+│       └── *.cjs
+│
+├── docs/                            → Documentation, annexes, visual diagrams and figures
+│   ├── README.md                    → Project overview and execution instructions
+│   ├── Annex_I_Model.md             → Details on dataset creation, training and results
+│   ├── Annex_II_Blockchain.md       → Description of smart contract logic and deployment
+│   └── ...                          → PlantUML, diagrams, performance plots, etc.
+│
+├── requirements.txt                 → Python dependencies for installing and running the system
+└── README.md                        → Root-level README with project introduction
 ```
 
 ##  Setup
