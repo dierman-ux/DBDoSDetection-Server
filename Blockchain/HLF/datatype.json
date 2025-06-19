@@ -1,0 +1,9 @@
+{
+  "node": "node_01",
+  "packet_id": 0,
+  "Temp": 21.75,
+  "Hum": 27.74,
+  "Pres": "97170.78_#BAT:75#",
+  "length": 85,
+  "iteration": "1"
+}
