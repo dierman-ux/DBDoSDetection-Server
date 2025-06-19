@@ -2,11 +2,11 @@
 
 Real-time DoS attack detection and blockchain-based logging system using VeChain.
 
-##  Overview
+## Overview
 
 This project is a modular network security tool that captures traffic, extracts behavioral features, classifies flows using a trained ML model, and logs detected attacks into the VeChain testnet via smart contracts. It includes a web interface to manage the blacklist and interact with the system.
 
-##  Project Structure
+## Project Structure
 
 ```
 .
@@ -18,7 +18,7 @@ This project is a modular network security tool that captures traffic, extracts 
 │
 ├── models/                          → Dataset and script used to train and export ML models
 │   ├── knngenerator.py              → Script for training and exporting the KNN model
-│   └── dataset.csv                  → Final preprocessed and labeled dataset for training
+│   └──  DBDoS2025.csv                  → Final preprocessed and labeled dataset for training
 │
 ├── client/                          → Traffic simulator to generate test flows
 │   └── client.py                    → Simulates benign and various DoS attack patterns
@@ -39,15 +39,47 @@ This project is a modular network security tool that captures traffic, extracts 
 │
 ├── docs/                            → Documentation, annexes, visual diagrams and figures
 │   ├── README.md                    → Project overview and execution instructions
+<<<<<<< HEAD
 │   ├── Annex_I_Model.md             → Details on dataset creation, training and results
 │   ├── Annex_II_Blockchain.md       → Description of smart contract logic and deployment
 │   └── ...                          → PlantUML, diagrams, performance plots, etc.
 │
 ├── requirements.txt                 → Python dependencies for installing and running the system
 └── README.md                        → Root-level README with project introduction
+
+## Pre-Execution Setup
+
+Before running the system, ensure the trained machine learning model is available at the expected path and the blockchain scripts are initialized.
+
+### 1. Train the ML model
+
+```bash
+cd models
+python knngenerator.py
 ```
 
-##  Setup
+This will:
+- Load the dataset (`dataset.csv`)
+- Apply SMOTE to balance class distribution
+- Train a KNN model with `k=5`
+- Save the model in `models/ownmodel/knn_model.pkl`
+- Export `classification_report.csv`
+
+### 2. Install Node.js dependencies
+
+Make sure to run the following commands in both blacklist folders:
+
+```bash
+cd Server/blacklist
+npm install
+
+cd ../../DoSDetector/blacklist
+npm install
+```
+
+These are required for VeChain blockchain logging to function properly.
+
+## Setup
 
 ### Prerequisites
 
@@ -62,7 +94,7 @@ This project is a modular network security tool that captures traffic, extracts 
 pip install -r requirements.txt
 ```
 
-##  Usage
+## Usage
 
 ### 1. Start the HTTP server
 
@@ -77,14 +109,16 @@ python metrics.py --ip 192.168.1. --port 8080
 ```
 
 ### 3. Run the client to test the monitoring and detection
+
 ```bash
-python client.py --type hulk -url http://192.168.1.1:8080 --duration 60
+python client.py --type hulk --url http://192.168.1.1:8080 --duration 60
 ```
-> ⚠️ May require elevated privileges to access network interfaces.
 
-##  Features
+> ⚠️ May require elevated privileges (e.g., `sudo`) to access network interfaces.
 
-- Real-time DoS detection (SYNFlood, Hulk, UDPFlood, etc.)  
+## Features
+
+- Real-time DoS detection (HULK, SYNFlood, UDPFlood, etc.)  
 - ML-based classification using a trained KNN model  
 - IP warning system and automatic blacklisting  
 - Blockchain logging via VeChain testnet  
@@ -93,15 +127,20 @@ python client.py --type hulk -url http://192.168.1.1:8080 --duration 60
 
 ## Documentation
 
-The `docs/` folder includes the complete technical documentation:
+All technical documentation is available in the `docs/` directory:
 
-- [Introduction](docs/01_introduction.md)
-- [Detection Pipeline](docs/02_detection_pipeline.md)
-- [Blacklist & Blockchain](docs/03_blacklist_blockchain.md)
-- [Web Interface](docs/04_web_interface.md)
-- [Testing & Results](docs/05_testing_results.md)
-- [Cost Estimate](docs/06_cost_estimate.md)
+- [00 – Pre-Execution Setup](docs/00_pre_execution.md)
+- [01 – Introduction](docs/01_introduction.md)
+- [02 – Detection Pipeline](docs/02_detection_pipeline.md)
+- [03 – Blacklist & Blockchain](docs/03_blacklist_blockchain.md)
+- [04 – Web Interface](docs/04_web_interface.md)
+- [05 – Testing & Results](docs/05_testing_results.md)
+- [06 – Cost Estimate](docs/06_cost_estimate.md)
 
 ## License
 
+<<<<<<< HEAD
 Free Usage
+=======
+Free usage for academic and research purposes.
+>>>>>>> 78330f0b (Improved Documentation)
