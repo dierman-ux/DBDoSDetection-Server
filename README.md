@@ -18,7 +18,7 @@ This project is a modular network security tool that captures traffic, extracts 
 │
 ├── models/                          → Dataset and script used to train and export ML models
 │   ├── knngenerator.py              → Script for training and exporting the KNN model
-│   └──  DBDoS2025.csv                  → Final preprocessed and labeled dataset for training
+│   └── DBDoS2025.csv                → Final preprocessed and labeled dataset for training
 │
 ├── client/                          → Traffic simulator to generate test flows
 │   └── client.py                    → Simulates benign and various DoS attack patterns
@@ -39,13 +39,12 @@ This project is a modular network security tool that captures traffic, extracts 
 │
 ├── docs/                            → Documentation, annexes, visual diagrams and figures
 │   ├── README.md                    → Project overview and execution instructions
-<<<<<<< HEAD
-│   ├── Annex_I_Model.md             → Details on dataset creation, training and results
-│   ├── Annex_II_Blockchain.md       → Description of smart contract logic and deployment
-│   └── ...                          → PlantUML, diagrams, performance plots, etc.
+│   ├── 00_pre_execution.md          → How to train and prepare the model before running
+│   └── ...
 │
 ├── requirements.txt                 → Python dependencies for installing and running the system
-└── README.md                        → Root-level README with project introduction
+└── README.md                        → This file
+```
 
 ## Pre-Execution Setup
 
@@ -59,7 +58,7 @@ python knngenerator.py
 ```
 
 This will:
-- Load the dataset (`dataset.csv`)
+- Load the dataset (`DBDoS2025.csv`)
 - Apply SMOTE to balance class distribution
 - Train a KNN model with `k=5`
 - Save the model in `models/ownmodel/knn_model.pkl`
@@ -139,8 +138,4 @@ All technical documentation is available in the `docs/` directory:
 
 ## License
 
-<<<<<<< HEAD
-Free Usage
-=======
 Free usage for academic and research purposes.
->>>>>>> 78330f0b (Improved Documentation)
