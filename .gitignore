@@ -1,10 +1,10 @@
-# 🔧 Python
+# Python
 __pycache__/
 #*.py[cod]
 *.pkl
 #*.log
 
-# 🔒 Entornos y secretos
+# Entornos y secretos
 .env
 .venv/
 *.env
@@ -17,18 +17,19 @@ __pycache__/
 *.joblib
 # *.sav
 
-# 🧪 VeChain scripts y artefactos
+# VeChain scripts y artefactos
 #blacklist/*.ts
-blacklist/*.js
+blacklist/node_modules/
+#blacklist/*.js
 blacklist/*.map
 blacklist/*.sol.json
 
-# 🖼️ Frontal si se genera desde build tools
+# Frontal si se genera desde build tools
 /frontend/dist/
 /frontend/node_modules/
 /frontend/*.map
 
-# 💥 Archivos de prueba / temporales
+# Archivos de prueba / temporales
 *.bak
 *.tmp
 *.DS_Store
