@@ -1,36 +1,45 @@
-# Python
+# === Python ===
 __pycache__/
-#*.py[cod]
+*.py[cod]
 *.pkl
-#*.log
+*.joblib
+*.log
 
-# Entornos y secretos
-.env
+# === Python Virtual Envs ===
 .venv/
+.env
 *.env
 
-# Paquetes y node_modules
-# node_modules/
+# === Jupyter / IPython ===
+.ipynb_checkpoints/
+*.ipynb
 
-# Entrenamiento y modelos ML
-#models/
-*.joblib
-# *.sav
+# === Node.js ===
+node_modules/
+Server/blacklist/node_modules/
+DoSDetector/blacklist/node_modules/
+frontend/node_modules/
 
-# VeChain scripts y artefactos
-#blacklist/*.ts
-blacklist/node_modules/
-#blacklist/*.js
-blacklist/*.map
-blacklist/*.sol.json
+# === VeChain & Smart Contract build files ===
+*.sol.json
+*.map
 
-# Frontal si se genera desde build tools
-/frontend/dist/
-/frontend/node_modules/
-/frontend/*.map
+# === ML Models & Training Outputs ===
+models/ownmodel/
+*.sav
+*.h5
+*.onnx
 
-# Archivos de prueba / temporales
+# === Frontend Artifacts ===
+frontend/dist/
+frontend/*.map
+
+# === Temporary / Backup Files ===
 *.bak
 *.tmp
-*.DS_Store
 *.swp
+*.DS_Store
+
+# === Git & System Files ===
+Thumbs.db
+.DS_Store
