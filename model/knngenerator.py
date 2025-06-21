@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MODEL_DIR = os.path.join(BASE_DIR, "..", "DoSDetector", "models", "ownmodel")
 
-MODEL_PATH = os.path.abspath(os.path.join("..", "DoSDetectionServer", "models", "ownmodel", "knn_model.pkl"))
+MODEL_PATH = os.path.abspath(os.path.join("..", "DoSDetector", "models", "ownmodel", "knn_model.pkl"))
 MODEL_DIR = os.path.dirname(MODEL_PATH)
 
 REPORT_PATH = "classification_report.csv"
