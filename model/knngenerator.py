@@ -24,9 +24,16 @@ import joblib
 
 # ---------- CONFIGURATION ----------
 DATASET_PATH = "DBDoS2025.csv"
-MODEL_DIR = "ownmodel"
-MODEL_PATH = os.path.join("../DoSDetector/models",MODEL_DIR, "knn_model.pkl")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_DIR = os.path.join(BASE_DIR, "..", "DoSDetectionServer", "models", "ownmodel")
+
+MODEL_PATH = os.path.abspath(os.path.join("..", "DoSDetectionServer", "models", "ownmodel", "knn_model.pkl"))
+MODEL_DIR = os.path.dirname(MODEL_PATH)
+
 REPORT_PATH = "classification_report.csv"
+
 K_NEIGHBORS = 5
 
 LABEL_MAP = {
