@@ -10,12 +10,16 @@ class AttackDetector:
     and provides a prediction interface for network flow data.
     """
 
-    def __init__(self, model_path: str = r'.\models\ownmodel'):
+    def __init__(self, model_path: str = None):
         """
         Initialize the detector by loading the serialized model from disk.
 
         :param model_path: Path to the directory containing the saved .pkl model
         """
+
+        if model_path is None:
+            model_path = os.path.join('.', 'models', 'ownmodel')
+        
         file = os.path.join(model_path, "knn_model.pkl")
         self.model = joblib.load(file)
 
