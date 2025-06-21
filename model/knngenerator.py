@@ -27,7 +27,7 @@ DATASET_PATH = "DBDoS2025.csv"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-MODEL_DIR = os.path.join(BASE_DIR, "..", "DoSDetectionServer", "models", "ownmodel")
+MODEL_DIR = os.path.join(BASE_DIR, "..", "DoSDetector", "models", "ownmodel")
 
 MODEL_PATH = os.path.abspath(os.path.join("..", "DoSDetectionServer", "models", "ownmodel", "knn_model.pkl"))
 MODEL_DIR = os.path.dirname(MODEL_PATH)
