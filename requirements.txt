@@ -4,3 +4,4 @@ pandas>=2.0
 joblib>=1.2
 netifaces>=0.11
 requests>=2.31
+scikit-learn>=1.2
