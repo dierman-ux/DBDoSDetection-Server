@@ -15,6 +15,7 @@ It integrates with:
 The server listens on the local IP (determined automatically) and port 8080.
 """
 
+import argparse
 import socket
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from socketserver import ThreadingMixIn
@@ -296,8 +297,22 @@ def main():
     """
     Starts the HTTP server and begins periodic blacklist updates.
     """
+    parser = argparse.ArgumentParser(description="Start the Blacklist HTTP Server.")
+    parser.add_argument('--port', type=int, help='Port number to run the server on (default: 8080)')
+    args = parser.parse_args()
+
     ip = get_local_ip()
-    port = 8080
+
+    if args.port is not None:
+        port = args.port
+        print(f"[INFO] Using port {port} from command line argument.")
+    else:
+        try:
+            user_input = input("Enter port to run the server on [default: 8080]: ").strip()
+            port = int(user_input) if user_input else 8080
+        except ValueError:
+            print("[WARN] Invalid input. Using default port 8080.")
+            port = 8080
     server_address = (ip, port)
     httpd = ThreadedHTTPServer(server_address, SimpleRESTHandler)
 

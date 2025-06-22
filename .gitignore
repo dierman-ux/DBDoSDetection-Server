@@ -19,6 +19,12 @@ node_modules/
 Server/blacklist/node_modules/
 DoSDetector/blacklist/node_modules/
 frontend/node_modules/
+package-lock.json
+package.json
+Server/blacklist/package-lock.json
+Server/blacklist/package.json
+DoSDetector/blacklist/package-lock.json
+DoSDetector/blacklist/package.json
 
 # === VeChain & Smart Contract build files ===
 *.sol.json

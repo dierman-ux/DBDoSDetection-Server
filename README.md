@@ -107,6 +107,8 @@ python server.py
 python metrics.py --ip 192.168.1. --port 8080
 ```
 
+> ⚠️ May require elevated privileges (e.g., `sudo`) to access network interfaces if in Linux OS.
+
 ### 3. Run the client to test the monitoring and detection
 
 ```bash
