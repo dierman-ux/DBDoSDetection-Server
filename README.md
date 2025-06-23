@@ -52,35 +52,6 @@ This project is a modular network security tool that captures traffic, extracts 
 
 Before running the system, ensure a trained machine learning model is available at the expected path and the blockchain scripts are initialized.
 
-### 1. Train the ML model
-Choose your desired model based on script names.
-
-```bash
-cd models
-python knngenerator.py
-```
-
-This will:
-- Load the dataset (`DBDoS2025.csv`)
-- Apply SMOTE to balance class distribution
-- Train an appropiate model with the most suited hiperparameters
-- Save the model in `models/ownmodel/model.pkl`
-- Export `classification_report.csv` and other efficiency related data
-
-### 2. Install Node.js dependencies
-
-Make sure to run the following commands in both blacklist folders:
-
-```bash
-cd Server/blacklist
-npm install
-
-cd ../../DoSDetector/blacklist
-npm install
-```
-
-These are required for VeChain blockchain logging to function properly.
-
 ## Setup
 
 ### Prerequisites
@@ -96,21 +67,59 @@ These are required for VeChain blockchain logging to function properly.
 pip install -r requirements.txt
 ```
 
+### 1. Train the ML model
+Choose your desired model based on script names.
+
+```bash
+cd model
+python knngenerator.py
+```
+
+This will:
+- Load the dataset (`DBDoS2025.csv`)
+- Apply SMOTE to balance class distribution
+- Train an appropiate model with the most suited hiperparameters
+- Save the model in `models/ownmodel/model.pkl`
+- Export `classification_report.csv`, `ROC Curves` and `PCA Scatter Plot`
+- Print the stats of the obtained model
+
+### 2. Install Node.js dependencies
+
+Make sure to run the following commands in both blacklist folders:
+
+```bash
+cd server/blacklist
+npm install
+
+cd ../../DoSDetector/blacklist
+npm install
+```
+
+These are required for VeChain blockchain logging to function properly.
+
 ## Usage
 
 ### 1. Start the HTTP server
 
 ```bash
+cd server
 python server.py
 ```
 
 ### 2. Run the traffic monitor and detection engine
 
+Recomended in another terminal as to verify log messages
+
 ```bash
+cd DoSDetector
 python metrics.py --ip 192.168.1. --port 8080
 ```
 
 > ⚠️ May require elevated privileges (e.g., `sudo`) to access network interfaces if in Linux OS.
+>```bash
+> sudo env "PATH=$PATH" "VIRTUAL_ENV=$VIRTUAL_ENV" "$VIRTUAL_ENV/bin/python" metrics.py
+>```
+
 
 ### 3. Run the client to test the monitoring and detection
 
