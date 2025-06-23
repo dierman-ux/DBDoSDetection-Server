@@ -30,6 +30,7 @@ import sys
 import argparse
 import signal
 import threading
+import socket
 import platform
 
 
@@ -230,6 +231,20 @@ class MetricsExtractor:
             'Bwd URG Flags': flow['bwd_urg_flags']
         }
 
+    def get_local_ip(self):
+        """
+        Returns the local IP address used to reach the internet.
+        """
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        try:
+            s.connect(('8.8.8.8', 80))
+            ip = s.getsockname()[0]
+        except Exception:
+            ip = '127.0.0.1'
+        finally:
+            s.close()
+        return ip
+    
     def packet_callback(self, pkt):
         """
         Callback function triggered by Scapy for every captured packet.
@@ -237,9 +252,10 @@ class MetricsExtractor:
         """
         self.last_packet_time = time.time()
         result = self.process_packet(pkt)
+        local_ip = self.get_local_ip()
         if result:
             src, metrics = result
-            if self.blacklist_manager.is_blacklisted(src):     
+            if self.blacklist_manager.is_blacklisted(src) or src==local_ip:     
                 return
             print(f"[{src}] Flow metrics extracted: {metrics['Destination Port']}, Duration: {metrics['Flow Duration']:.2f}s")
             self.logger.info(f"[{src}] Metrics: {metrics}")
@@ -251,9 +267,9 @@ class MetricsExtractor:
                 print(f"Current blacklist state for {src}: {self.blacklist_manager.blacklist_local[src]}")
                 if blacklisted:
                     print(f"[{src}] Blacklisted after {warnings} warnings.")
-                else:
-                    print(f"[{src}] Flow is benign, resetting warnings.")
-                    self.blacklist_manager.reset_warnings(src)
+            else:
+                print(f"[{src}] Flow is benign, resetting warnings.")
+                self.blacklist_manager.reset_warnings(src)
 
     def start_sniffing(self, count=0, idle_timeout=5, timeout=300):
         """
