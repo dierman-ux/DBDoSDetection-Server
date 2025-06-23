@@ -241,17 +241,16 @@ class MetricsExtractor:
             src, metrics = result
             if self.blacklist_manager.is_blacklisted(src):     
                 return
-            if metrics['Destination Port'] == 8080:
-                print(f"[{src}] Flow metrics extracted: {metrics['Destination Port']}, Duration: {metrics['Flow Duration']:.2f}s")
-                self.logger.info(f"[{src}] Metrics: {metrics}")
-                prediction = self.detector.predict(metrics)
-                print(f"Prediction: {prediction}")
-                if prediction != "BENIGN":
-                    warnings, blacklisted = self.blacklist_manager.add_warning(src, "DoS " + prediction)
-                    print(f"[{prediction}] Warning {warnings} for {src}")
-                    print(f"Current blacklist state for {src}: {self.blacklist_manager.blacklist_local[src]}")
-                    if blacklisted:
-                        print(f"[{src}] Blacklisted after {warnings} warnings.")
+            print(f"[{src}] Flow metrics extracted: {metrics['Destination Port']}, Duration: {metrics['Flow Duration']:.2f}s")
+            self.logger.info(f"[{src}] Metrics: {metrics}")
+            prediction = self.detector.predict(metrics)
+            print(f"Prediction: {prediction}")
+            if prediction != "BENIGN":
+                warnings, blacklisted = self.blacklist_manager.add_warning(src, "DoS " + prediction)
+                print(f"[{prediction}] Warning {warnings} for {src}")
+                print(f"Current blacklist state for {src}: {self.blacklist_manager.blacklist_local[src]}")
+                if blacklisted:
+                    print(f"[{src}] Blacklisted after {warnings} warnings.")
                 else:
                     print(f"[{src}] Flow is benign, resetting warnings.")
                     self.blacklist_manager.reset_warnings(src)

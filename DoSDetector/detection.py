@@ -20,7 +20,7 @@ class AttackDetector:
         if model_path is None:
             model_path = os.path.join('.', 'models', 'ownmodel')
         
-        file = os.path.join(model_path, "knn_model.pkl")
+        file = os.path.join(model_path, "model.pkl")
         self.model = joblib.load(file)
 
     def predict(self, new_data_df) -> np.ndarray:
