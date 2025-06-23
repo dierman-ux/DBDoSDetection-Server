@@ -18,6 +18,8 @@ This project is a modular network security tool that captures traffic, extracts 
 │
 ├── models/                          → Dataset and script used to train and export ML models
 │   ├── knngenerator.py              → Script for training and exporting the KNN model
+│   ├── randomforestgenerator.py     → Script for training and exporting the Random Forest model
+│   ├── ...
 │   └── DBDoS2025.csv                → Final preprocessed and labeled dataset for training
 │
 ├── client/                          → Traffic simulator to generate test flows
@@ -48,9 +50,10 @@ This project is a modular network security tool that captures traffic, extracts 
 
 ## Pre-Execution Setup
 
-Before running the system, ensure the trained machine learning model is available at the expected path and the blockchain scripts are initialized.
+Before running the system, ensure a trained machine learning model is available at the expected path and the blockchain scripts are initialized.
 
 ### 1. Train the ML model
+Choose your desired model based on script names.
 
 ```bash
 cd models
@@ -60,9 +63,9 @@ python knngenerator.py
 This will:
 - Load the dataset (`DBDoS2025.csv`)
 - Apply SMOTE to balance class distribution
-- Train a KNN model with `k=5`
-- Save the model in `models/ownmodel/knn_model.pkl`
-- Export `classification_report.csv`
+- Train an appropiate model with the most suited hiperparameters
+- Save the model in `models/ownmodel/model.pkl`
+- Export `classification_report.csv` and other efficiency related data
 
 ### 2. Install Node.js dependencies
 
