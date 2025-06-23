@@ -1,28 +1,28 @@
 """
-knngenerator.py
+ExtraTreesClassifiergenerator.py
 
 This script loads a labeled dataset, balances class distribution using SMOTE,
-trains a K-Nearest Neighbours (KNN) classifier, and saves the model for use
+trains a Extra Trees classifier, and saves the model for use
 in the detection module. It also outputs a classification report and confusion matrix.
 
 Outputs:
-- Trained model: ownmodel/kmodel.pkl
+- Trained model: ownmodel/model.pkl
 - Classification report: classification_report.csv
 - Confusion matrix: displayed with seaborn
 """
 
+import os
+import time
 import pandas as pd
 import numpy as np
-import os
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
-from imblearn.over_sampling import SMOTE
 import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
-import time
+
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from imblearn.over_sampling import SMOTE
+from sklearn.ensemble import ExtraTreesClassifier
 
 from sklearn.preprocessing import StandardScaler, label_binarize
 from sklearn.decomposition import PCA
@@ -30,19 +30,9 @@ from sklearn.metrics import roc_curve, auc
 
 # ---------- CONFIGURATION ----------
 DATASET_PATH = "DBDoS2025.csv"
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-MODEL_DIR = os.path.join(BASE_DIR, "..", "DoSDetector", "models", "ownmodel")
-
-MODEL_PATH = os.path.abspath(os.path.join("..", "DoSDetector", "models", "ownmodel", "model.pkl"))
-MODEL_DIR = os.path.dirname(MODEL_PATH)
-
-REPORT_PATH = os.path.join("./", "classification_report_knn.csv")
-
+MODEL_PATH = os.path.join("../DoSDetector/models/ownmodel", "model.pkl")
+REPORT_PATH = os.path.join("./", "classification_report_extra_tree.csv")
 EXCEL_PATH = "../DoSDetector/models/model_stats.xlsx"
-
-K_NEIGHBORS = 5
 
 LABEL_MAP = {
     "benigno": 0,
@@ -76,30 +66,30 @@ X_resampled, y_resampled = smote.fit_resample(X, y)
 print(f"[INFO] Resampled class distribution: {pd.Series(y_resampled).value_counts().to_dict()}")
 
 # ---------- TRAINING ----------
-print(f"[INFO] Training KNN model with k={K_NEIGHBORS}...")
+print("[INFO] Training model...")
 X_train, X_test, y_train, y_test = train_test_split(
     X_resampled, y_resampled, test_size=0.3, random_state=42, stratify=y_resampled
 )
 
+# ---------- MODEL ----------
 start_train = time.time()
-knn = KNeighborsClassifier(n_neighbors=K_NEIGHBORS, metric='euclidean')
-knn.fit(X_train, y_train)
+model = ExtraTreesClassifier()
+model.fit(X_train, y_train)
 end_train = time.time()
 
-print("[INFO] Making predictions...")
+# ---------- PREDICTION ----------
+print("[INFO] Realizando predicciones...")
 start_pred = time.time()
-y_pred = knn.predict(X_test)
+y_pred = model.predict(X_test)
 end_pred = time.time()
 
-# ---------- REPORT ----------
-print("[INFO] Generating classification report...")
+# ---------- METRICS ----------
+print("[INFO] Making predictions...")
 report = classification_report(y_test, y_pred, target_names=TARGET_NAMES, output_dict=True)
 report_df = pd.DataFrame(report).transpose()
-print(report_df.round(4))
 report_df.to_csv(REPORT_PATH)
 print(f"[INFO] Report saved to {REPORT_PATH}")
 
-# ---------- CONFUSION MATRIX ----------
 print("[INFO] Displaying confusion matrix...")
 conf_matrix = confusion_matrix(y_test, y_pred)
 plt.figure(figsize=(8, 6))
@@ -107,9 +97,9 @@ sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues",
             xticklabels=TARGET_NAMES, yticklabels=TARGET_NAMES)
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
-plt.title("Confusion Matrix - KNN")
+plt.title("Confusion Matrix - ExtraTreesClassifier")
 plt.tight_layout()
-plt.savefig(f"confusion_matrix_knn.png")
+plt.savefig(f"confusion_matrix_extra_tree.png")
 plt.close()
 
 # ---------- ROC CURVES ----------
@@ -118,7 +108,7 @@ print("[INFO] Generating ROC curves...")
 N_CLASSES = len(LABEL_MAP)
 
 y_test_bin = label_binarize(y_test, classes=range(N_CLASSES))
-y_score = knn.predict_proba(X_test)
+y_score = model.predict_proba(X_test)
 
 plt.figure(figsize=(8, 6))
 for i in range(N_CLASSES):
@@ -154,8 +144,8 @@ plt.close()
 
 # ---------- SAVE MODEL ----------
 print(f"[INFO] Saving model to {MODEL_PATH}...")
-os.makedirs(MODEL_DIR, exist_ok=True)
-joblib.dump(knn, MODEL_PATH)
+os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
+joblib.dump(model, MODEL_PATH)
 print("[SUCCESS] Model trained and saved.")
 
 # ---------- STATS ----------
@@ -166,10 +156,10 @@ f1 = f1_score(y_test, y_pred, average='macro', zero_division=0)
 pred_time = (end_pred - start_pred)
 train_time = (end_train - start_train)
 avg_pred_time = pred_time / len(y_test)
-cv_scores = cross_val_score(knn, X_resampled, y_resampled, cv=5)
+cv_scores = cross_val_score(model, X_resampled, y_resampled, cv=5)
 
 row = {
-    "Modelo": "KNN",
+    "Modelo": "ExtraTreesClassifier",
     "Accuracy": accuracy,
     "Precision": precision,
     "Recall": recall,
@@ -180,6 +170,7 @@ row = {
     "Accuracy Cross-Val (media)": np.mean(cv_scores),
     "Cross-Val Std": np.std(cv_scores)
 }
+
 print(f"[INFO] Model Stats: {row}")
 
 if os.path.exists(EXCEL_PATH):
@@ -189,4 +180,4 @@ else:
     df_stats = pd.DataFrame([row])
 
 df_stats.to_excel(EXCEL_PATH, index=False)
-print("[SUCCESS] Modelo entrenado y estadísticas guardadas.")
+print("[SUCCESS] Model trained y statistics saved.")
