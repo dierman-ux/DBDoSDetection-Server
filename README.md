@@ -14,6 +14,8 @@ This project is a modular network security tool that captures traffic, extracts 
 │   ├── HLF/                         → Chaincode written in Go for Hyperledger Fabric
 │   │   └── chaincode.go
 │   └── VeChain/                     → Smart contract in Solidity for VeChainThor
+│       ├── ABI.json                 → Smart contract ABI
+│       ├── address.txt              → Smart contract address
 │       └── smartcontract.sol
 │
 ├── models/                          → Dataset and script used to train and export ML models
