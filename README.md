@@ -1,4 +1,4 @@
-# blacklist_server
+# DBDoSDetection-Server
 
 Real-time DoS attack detection and blockchain-based logging system using VeChain.
 
