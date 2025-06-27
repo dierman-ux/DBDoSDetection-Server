@@ -15,7 +15,7 @@ Network packets are captured using Scapy. Flow-level features are calculated and
 
 ## Classification Model
 
-A K-Nearest Neighbors (KNN) model trained on pre-labeled traffic data is used for attack detection. Supported classes:
+A model trained on pre-labeled traffic data is used for attack detection. Supported classes:
 
 - BENIGN
 - HULK

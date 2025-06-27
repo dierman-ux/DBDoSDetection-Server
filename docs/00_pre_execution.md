@@ -4,15 +4,15 @@ Before running the system, it is essential to ensure that the machine learning m
 
 ## Objective
 
-The detection module (`detection.py`) uses a trained KNN classifier to detect malicious traffic. This model must be generated beforehand and saved at the expected location. Additionally, the Node.js blockchain interaction scripts must be set up using `npm`.
+The detection module (`detection.py`) uses a trained classifier to detect malicious traffic. A model must be generated beforehand and saved at the expected location. Additionally, the Node.js blockchain interaction scripts must be set up using `npm`.
 
 ---
 
 ## Input Files and Directories
 
 - `models/dataset.csv` – Labeled dataset used to train the model.
-- `models/knngenerator.py` – Script to train and export the classifier.
-- Output: `models/ownmodel/knn_model.pkl`
+- `models/svmgenerator.py` – Script to train and export the classifier. Choose the any from the models folder
+- Output: `models/ownmodel/model.pkl`
 - `Server/blacklist/` – Blockchain interaction scripts (VeChain)
 - `DoSDetector/blacklist/` – Blockchain interaction scripts (VeChain)
 
@@ -24,15 +24,17 @@ The detection module (`detection.py`) uses a trained KNN classifier to detect ma
 
 ```bash
 cd models
-python knngenerator.py
+python random_forestgenerator.py
 ```
 
 This script will:
 - Load the dataset from `dataset.csv`
 - Balance the classes using SMOTE
-- Train a KNN classifier (k=5, Euclidean distance)
-- Save the model to `models/ownmodel/knn_model.pkl`
+- Train a Random Forest classifier (nº estimators=100, criterion	gini)
+- Save the model to `models/ownmodel/model.pkl`
 - Generate a performance report: `classification_report.csv`
+- Generate ROC curves
+- Generate PCA scatter plot
 - Display a confusion matrix for visual evaluation
 
 ---

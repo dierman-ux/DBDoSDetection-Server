@@ -1,4 +1,4 @@
-# blacklist_server
+# DBDoSDetection-Server
 
 Real-time DoS attack detection and blockchain-based logging system using VeChain.
 
@@ -14,10 +14,14 @@ This project is a modular network security tool that captures traffic, extracts 
 │   ├── HLF/                         → Chaincode written in Go for Hyperledger Fabric
 │   │   └── chaincode.go
 │   └── VeChain/                     → Smart contract in Solidity for VeChainThor
+│       ├── ABI.json                 → Smart contract ABI
+│       ├── address.txt              → Smart contract address
 │       └── smartcontract.sol
 │
 ├── models/                          → Dataset and script used to train and export ML models
 │   ├── knngenerator.py              → Script for training and exporting the KNN model
+│   ├── randomforestgenerator.py     → Script for training and exporting the Random Forest model
+│   ├── ...
 │   └── DBDoS2025.csv                → Final preprocessed and labeled dataset for training
 │
 ├── client/                          → Traffic simulator to generate test flows
@@ -48,35 +52,7 @@ This project is a modular network security tool that captures traffic, extracts 
 
 ## Pre-Execution Setup
 
-Before running the system, ensure the trained machine learning model is available at the expected path and the blockchain scripts are initialized.
-
-### 1. Train the ML model
-
-```bash
-cd models
-python knngenerator.py
-```
-
-This will:
-- Load the dataset (`DBDoS2025.csv`)
-- Apply SMOTE to balance class distribution
-- Train a KNN model with `k=5`
-- Save the model in `models/ownmodel/knn_model.pkl`
-- Export `classification_report.csv`
-
-### 2. Install Node.js dependencies
-
-Make sure to run the following commands in both blacklist folders:
-
-```bash
-cd Server/blacklist
-npm install
-
-cd ../../DoSDetector/blacklist
-npm install
-```
-
-These are required for VeChain blockchain logging to function properly.
+Before running the system, ensure a trained machine learning model is available at the expected path and the blockchain scripts are initialized.
 
 ## Setup
 
@@ -93,21 +69,59 @@ These are required for VeChain blockchain logging to function properly.
 pip install -r requirements.txt
 ```
 
+### 1. Train the ML model
+Choose your desired model based on script names.
+
+```bash
+cd model
+python knngenerator.py
+```
+
+This will:
+- Load the dataset (`DBDoS2025.csv`)
+- Apply SMOTE to balance class distribution
+- Train an appropiate model with the most suited hiperparameters
+- Save the model in `models/ownmodel/model.pkl`
+- Export `classification_report.csv`, `ROC Curves` and `PCA Scatter Plot`
+- Print the stats of the obtained model
+
+### 2. Install Node.js dependencies
+
+Make sure to run the following commands in both blacklist folders:
+
+```bash
+cd server/blacklist
+npm install
+
+cd ../../DoSDetector/blacklist
+npm install
+```
+
+These are required for VeChain blockchain logging to function properly.
+
 ## Usage
 
 ### 1. Start the HTTP server
 
 ```bash
+cd server
 python server.py
 ```
 
 ### 2. Run the traffic monitor and detection engine
 
+Recomended in another terminal as to verify log messages
+
 ```bash
+cd DoSDetector
 python metrics.py --ip 192.168.1. --port 8080
 ```
 
 > ⚠️ May require elevated privileges (e.g., `sudo`) to access network interfaces if in Linux OS.
+>```bash
+> sudo env "PATH=$PATH" "VIRTUAL_ENV=$VIRTUAL_ENV" "$VIRTUAL_ENV/bin/python" metrics.py
+>```
+
 
 ### 3. Run the client to test the monitoring and detection
 
