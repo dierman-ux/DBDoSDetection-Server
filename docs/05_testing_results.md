@@ -3,7 +3,6 @@
 ## Table of Contents
 - [Dataset](#dataset)
 - [Metrics](#metrics)
-- [Visualizations](#visualizations)
 
 ## Dataset
 
